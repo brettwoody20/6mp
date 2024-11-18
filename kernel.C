@@ -143,16 +143,16 @@ Thread * thread3;
 Thread * thread4;
 
 void fun1() {
-    Console::puts("THREAD: "); Console::puti(Thread::CurrentThread()->ThreadId()); Console::puts("\n");
+    //Console::puts("THREAD: "); Console::puti(Thread::CurrentThread()->ThreadId()); Console::puts("\n");
 
-    Console::puts("FUN 1 INVOKED!\n");
+    //Console::puts("FUN 1 INVOKED!\n");
 
-    for(int j = 0; j<5; j++) {
+    for(int j = 0;; j++) {
 
-       Console::puts("FUN 1 IN ITERATION["); Console::puti(j); Console::puts("]\n");
+       //Console::puts("FUN 1 IN ITERATION["); Console::puti(j); Console::puts("]\n");
 
        for (int i = 0; i < 4; i++) {
-           Console::puts("FUN 1: TICK ["); Console::puti(i); Console::puts("]\n");
+           //Console::puts("FUN 1: TICK ["); Console::puti(i); Console::puts("]\n");
        }
 
        pass_on_CPU(thread2);
@@ -198,16 +198,16 @@ void fun2() {
 }
 
 void fun3() {
-    Console::puts("THREAD: "); Console::puti(Thread::CurrentThread()->ThreadId()); Console::puts("\n");
+    //Console::puts("THREAD: "); Console::puti(Thread::CurrentThread()->ThreadId()); Console::puts("\n");
 
-    Console::puts("FUN 3 INVOKED!\n");
+    //Console::puts("FUN 3 INVOKED!\n");
 
-     for(int j = 0;j<5; j++) {
+     for(int j = 0;; j++) {
 
-       Console::puts("FUN 3 IN BURST["); Console::puti(j); Console::puts("]\n");
+       //Console::puts("FUN 3 IN BURST["); Console::puti(j); Console::puts("]\n");
 
        for (int i = 0; i < 4; i++) {
-           Console::puts("FUN 3: TICK ["); Console::puti(i); Console::puts("]\n");
+           //Console::puts("FUN 3: TICK ["); Console::puti(i); Console::puts("]\n");
        }
     
        pass_on_CPU(thread4);

@@ -1,6 +1,9 @@
 {
     "files.associations": {
         "kernel.C": "cpp",
-        "console.C": "cpp"
+        "console.C": "cpp",
+        "scheduler.C": "cpp",
+        "nonblocking_disk.C": "cpp",
+        "simple_disk.C": "cpp"
     }
 }

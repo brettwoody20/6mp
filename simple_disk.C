@@ -84,7 +84,7 @@ void SimpleDisk::issue_operation(DISK_OPERATION _op, unsigned long _block_no) {
 bool SimpleDisk::is_ready() {
 	Console::puts("."); // output current status. 
 	unsigned char status = Machine::inportb(0x1F7);
-	Console::putui((unsigned int)status);
+	Console::putui((unsigned int)status);Console::puts("\n");
 	return ((status & 0b00001000) != 0);
 }
 

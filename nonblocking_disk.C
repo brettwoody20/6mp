@@ -56,6 +56,7 @@ void NonBlockingDisk::read(unsigned long _block_no, unsigned char * _buf) {
     push(Thread::CurrentThread(), _block_no, _buf, DISK_OPERATION::READ);
   }
 
+  assert(issued != nullptr);
   Console::puts("Yielding\n");
   //we then yield the processor while we will wait for the disk to finish
   Scheduler::curr_scheduler->yield();
@@ -74,6 +75,7 @@ void NonBlockingDisk::write(unsigned long _block_no, unsigned char * _buf) {
     push(Thread::CurrentThread(), _block_no, _buf, DISK_OPERATION::WRITE);
   }
 
+  assert(issued != nullptr);
   //we then yield the processor while we will wait for the disk to finish
   Scheduler::curr_scheduler->yield();
 }

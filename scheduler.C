@@ -99,7 +99,9 @@ void Scheduler::resume(Thread * _thread) {
 
   NonBlockingDisk * curr_disk = NonBlockingDisk::curr_NB_disk;
   //if there is a thread waiting on a disk operation and its disk operation is done
+  Console::puts("Checking disk status\n");
   if (curr_disk->get_issued() != nullptr && curr_disk->get_status() == true) {
+    Console::puts("Operation done\n");
     queue_node * curr = curr_disk->get_issued();
 
     //if it is a read operation, read from port
