@@ -147,7 +147,7 @@ void fun1() {
 
     Console::puts("FUN 1 INVOKED!\n");
 
-    for(int j = 0; j<2; j++) {
+    for(int j = 0; j<5; j++) {
 
        Console::puts("FUN 1 IN ITERATION["); Console::puti(j); Console::puts("]\n");
 
@@ -202,7 +202,7 @@ void fun3() {
 
     Console::puts("FUN 3 INVOKED!\n");
 
-     for(int j = 0; j < 10; j++) {
+     for(int j = 0;j<5; j++) {
 
        Console::puts("FUN 3 IN BURST["); Console::puti(j); Console::puts("]\n");
 
@@ -324,10 +324,10 @@ int main() {
     Console::puts("DONE\n");
 
 
-    // Console::puts("CREATING THREAD 3...");
-    // char * stack3 = new char[STACK_SIZE];
-    // thread3 = new Thread(fun3, stack3, STACK_SIZE);
-    // Console::puts("DONE\n");
+    Console::puts("CREATING THREAD 3...");
+    char * stack3 = new char[STACK_SIZE];
+    thread3 = new Thread(fun3, stack3, STACK_SIZE);
+    Console::puts("DONE\n");
 
 
     // Console::puts("CREATING THREAD 4...");
@@ -340,7 +340,7 @@ int main() {
     /* WE ADD thread2 - thread4 TO THE READY QUEUE OF THE SCHEDULER. */
 
     SYSTEM_SCHEDULER->add(thread2);
-    //SYSTEM_SCHEDULER->add(thread3);
+    SYSTEM_SCHEDULER->add(thread3);
     //SYSTEM_SCHEDULER->add(thread4);
 
 #endif
